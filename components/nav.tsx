@@ -1,48 +1,27 @@
 'use client';
-import { ArrowLeft } from 'lucide-react';
+
+import Image from 'next/image';
 import Link from 'next/link';
-import React, { useEffect, useRef, useState } from 'react';
+import * as React from 'react';
 
 export const Navigation: React.FC = () => {
-  const ref = useRef<HTMLElement>(null);
-  const [isIntersecting, setIntersecting] = useState(true);
-
-  useEffect(() => {
-    if (!ref.current) return;
-    const observer = new IntersectionObserver(([entry]) => setIntersecting(entry.isIntersecting));
-
-    observer.observe(ref.current);
-    return () => observer.disconnect();
-  }, []);
-
   return (
-    <header ref={ref}>
-      <div
-        className={`fixed inset-x-0 top-0 z-50 border-b  backdrop-blur duration-200  ${
-          isIntersecting
-            ? 'bg-ddDarkGreen-900/0 border-transparent'
-            : 'bg-ddDarkGreen-900/500  border-ddDarkGreen-800 '
-        }`}
-      >
-        <div className="container mx-auto flex flex-row-reverse items-center justify-between p-6">
-          <div className="flex justify-between gap-8">
-            <Link
-              href="/projects"
-              className="text-ddLightGreen-400 hover:text-ddLightGreen-100 duration-200"
-            >
-              Projects
+    <header className="h-16 w-screen bg-ddLightGreen-100">
+      <div className="fixed top-0 z-40 w-full transition-colors duration-500">
+        <div className="mx-auto">
+          <div className="relative flex items-center">
+            <Link href="/" className="mr-3">
+              <Image src="/logo.png" alt="logo" width={60} height={60} />
             </Link>
-            <Link
-              href="/contact"
-              className="text-ddLightGreen-400 hover:text-ddLightGreen-100 duration-200"
-            >
-              Contact
-            </Link>
+            <nav className="ml-auto flex justify-between gap-4 font-display text-base font-bold duration-300">
+              <Link href="/projects" className="text-ddEggshell duration-300 hover:text-ddYellow">
+                Projects
+              </Link>
+              <Link href="/contact" className="text-ddEggshell duration-300 hover:text-ddYellow">
+                Contact
+              </Link>
+            </nav>
           </div>
-
-          <Link href="/" className="text-ddLightGreen-300 hover:text-ddLightGreen-100 duration-200">
-            <ArrowLeft className="h-6 w-6 " />
-          </Link>
         </div>
       </div>
     </header>

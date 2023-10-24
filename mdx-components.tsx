@@ -5,7 +5,7 @@ export function useMDXComponents(components: any): any {
   return {
     // Allows customizing built-in components, e.g. to add styling.
     h1: ({ children }: PropsWithChildren) => (
-      <h1 className="text-ddLightGreen-100 mt-2 text-3xl font-bold tracking-tight sm:text-4xl md:text-center">
+      <h1 className="text-ddYellow mt-2 text-3xl font-bold tracking-tight sm:text-4xl md:text-center">
         {children}
       </h1>
     ),

@@ -1,7 +1,6 @@
 import '@/styles/globals.css';
 import { Inter } from 'next/font/google';
 import { Metadata } from 'next';
-import { Analytics } from '@/components/analytics';
 import { cn } from '@/lib/utils';
 
 export const metadata: Metadata = {
@@ -52,17 +51,9 @@ const inter = Inter({
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={cn(inter.variable)}>
-      <head>
-        <Analytics />
-      </head>
-      <body
-        className={`bg-black ${
-          process.env.NODE_ENV === 'development' ? 'debug-screens' : undefined
-        }`}
-      >
-        {children}
-      </body>
+    <html lang="en" className={cn(inter.variable, 'bg-ddDarkGreen')} suppressHydrationWarning>
+      <head />
+      <body>{children}</body>
     </html>
   );
 }

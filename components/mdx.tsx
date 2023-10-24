@@ -15,7 +15,7 @@ const components = {
   h2: ({ className, ...props }) => (
     <h2
       className={cn(
-        'border-b-ddDarkGreen-800 mt-10 scroll-m-20 border-b pb-1 text-3xl font-semibold tracking-tight first:mt-0',
+        'mt-10 scroll-m-20 border-b border-b-ddDarkGreen-800 pb-1 text-3xl font-semibold tracking-tight first:mt-0',
         className,
       )}
       {...props}
@@ -47,7 +47,7 @@ const components = {
   ),
   a: ({ className, ...props }) => (
     <Link
-      className={cn('text-ddLightGreen-900 font-medium underline underline-offset-4', className)}
+      className={cn('font-medium text-ddLightGreen-900 underline underline-offset-4', className)}
       {...props}
     />
   ),
@@ -64,7 +64,7 @@ const components = {
   blockquote: ({ className, ...props }) => (
     <blockquote
       className={cn(
-        'border-ddDarkGreen-300 text-ddLightGreen-800 [&>*]:text-ddLightGreen-600 mt-6 border-l-2 pl-6 italic',
+        'mt-6 border-l-2 border-ddLightGreen-300 pl-6 italic text-ddLightGreen-800 [&>*]:text-ddLightGreen-600',
         className,
       )}
       {...props}
@@ -72,13 +72,9 @@ const components = {
   ),
   img: ({ className, alt, ...props }: React.ImgHTMLAttributes<HTMLImageElement>) => (
     // eslint-disable-next-line @next/next/no-img-element
-    <img
-      className={cn('border-ddDarkGreen-200 rounded-md border', className)}
-      alt={alt}
-      {...props}
-    />
+    <img className={cn('rounded-md border border-ddPink', className)} alt={alt} {...props} />
   ),
-  hr: ({ ...props }) => <hr className="border-ddDarkGreen-200 my-4 md:my-8" {...props} />,
+  hr: ({ ...props }) => <hr className="my-4 border-ddDarkGreen-200 md:my-8" {...props} />,
   table: ({ className, ...props }: React.HTMLAttributes<HTMLTableElement>) => (
     <div className="my-6 w-full overflow-y-auto">
       <table className={cn('w-full', className)} {...props} />
@@ -86,14 +82,14 @@ const components = {
   ),
   tr: ({ className, ...props }: React.HTMLAttributes<HTMLTableRowElement>) => (
     <tr
-      className={cn('border-ddDarkGreen-300 even:bg-ddDarkGreen-100 m-0 border-t p-0', className)}
+      className={cn('m-0 border-t border-ddLightGreen-300 p-0 even:bg-ddDarkGreen-100', className)}
       {...props}
     />
   ),
   th: ({ className, ...props }) => (
     <th
       className={cn(
-        'border-ddDarkGreen-200 border px-4 py-2 text-left font-bold [&[align=center]]:text-center [&[align=right]]:text-right',
+        'border border-ddDarkGreen-200 px-4 py-2 text-left font-bold [&[align=center]]:text-center [&[align=right]]:text-right',
         className,
       )}
       {...props}
@@ -102,7 +98,7 @@ const components = {
   td: ({ className, ...props }) => (
     <td
       className={cn(
-        'border-ddDarkGreen-200 border px-4 py-2 text-left [&[align=center]]:text-center [&[align=right]]:text-right',
+        'border border-ddDarkGreen-200 px-4 py-2 text-left [&[align=center]]:text-center [&[align=right]]:text-right',
         className,
       )}
       {...props}
@@ -110,14 +106,14 @@ const components = {
   ),
   pre: ({ className, ...props }) => (
     <pre
-      className={cn('bg-ddDarkGreen-900 mb-4 mt-6 overflow-x-auto rounded-lg py-4', className)}
+      className={cn('mb-4 mt-6 overflow-x-auto rounded-lg bg-ddDarkGreen py-4', className)}
       {...props}
     />
   ),
   code: ({ className, ...props }) => (
     <code
       className={cn(
-        'bg-ddDarkGreen-300 text-ddLightGreen-600 relative rounded border bg-opacity-25 px-[0.3rem] py-[0.2rem] font-mono text-sm',
+        'relative rounded border bg-ddLightGreen-300 bg-opacity-25 px-[0.3rem] py-[0.2rem] font-mono text-sm text-ddLightGreen-600',
         className,
       )}
       {...props}

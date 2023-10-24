@@ -41,23 +41,21 @@ export default async function ProjectsPage() {
   return (
     <div className="relative pb-16">
       <Navigation />
-      <div className="mx-auto max-w-7xl space-y-8 px-6 pt-20 md:space-y-16 md:pt-24 lg:px-8 lg:pt-32">
+      <div className="mx-auto mt-16 max-w-7xl space-y-8 px-6 pt-20 md:space-y-16 md:pt-24 lg:px-8 lg:pt-32">
         <div className="mx-auto max-w-2xl lg:mx-0">
-          <h2 className="text-ddLightGreen-100 text-3xl font-bold tracking-tight sm:text-4xl">
-            Projects
-          </h2>
-          <p className="text-ddLightGreen-400 mt-4">
-            Some of the projects are from work and some are on my own time.
+          <h2 className="text-3xl font-bold tracking-tight text-ddYellow sm:text-4xl">Projects</h2>
+          <p className="mt-4 text-ddEggshell">
+            This page is still a WIP, will fill this out with more information soon. Stay Tuned!
           </p>
         </div>
-        <div className="bg-ddDarkGreen-800 h-px w-full" />
+        <div className="h-px w-full bg-ddDarkGreen-800" />
 
         <div className="mx-auto grid grid-cols-1 gap-8 lg:grid-cols-2 ">
           <Card>
             <Link href={`/projects/${featured.slug}`}>
               <article className="relative h-full w-full p-4 md:p-8">
                 <div className="flex items-center justify-between gap-2">
-                  <div className="text-ddLightGreen-100 text-xs">
+                  <div className="text-xs text-ddYellow">
                     {featured.date ? (
                       <time dateTime={new Date(featured.date).toISOString()}>
                         {Intl.DateTimeFormat(undefined, {
@@ -68,7 +66,7 @@ export default async function ProjectsPage() {
                       <span>SOON</span>
                     )}
                   </div>
-                  <span className="text-ddLightGreen-500 flex items-center gap-1 text-xs">
+                  <span className="flex items-center gap-1 text-xs text-ddLightGreen-500">
                     <Eye className="h-4 w-4" />{' '}
                     {Intl.NumberFormat('en-US', { notation: 'compact' }).format(
                       views[featured.slug] ?? 0,
@@ -78,15 +76,15 @@ export default async function ProjectsPage() {
 
                 <h2
                   id="featured-post"
-                  className="text-ddLightGreen-100 mt-4 font-display text-3xl font-bold group-hover:text-white sm:text-4xl"
+                  className="mt-4 font-display text-3xl font-bold text-ddYellow group-hover:text-ddYellow/50 sm:text-4xl"
                 >
                   {featured.title}
                 </h2>
-                <p className="text-ddLightGreen-400 group-hover:text-ddLightGreen-300 mt-4 leading-8 duration-150">
+                <p className="mt-4 leading-8 text-ddLightGreen-400 duration-150 group-hover:text-ddLightGreen-300">
                   {featured.description}
                 </p>
                 <div className="absolute bottom-4 md:bottom-8">
-                  <p className="text-ddLightGreen-200 hover:text-ddLightGreen-50 hidden lg:block">
+                  <p className="hidden text-ddLightGreen-200 hover:text-ddLightGreen-50 lg:block">
                     Read more <span aria-hidden="true">&rarr;</span>
                   </p>
                 </div>
@@ -94,7 +92,7 @@ export default async function ProjectsPage() {
             </Link>
           </Card>
 
-          <div className="mx-auto flex w-full flex-col gap-8 border-t border-gray-900/10 lg:mx-0 lg:border-t-0 ">
+          <div className="mx-auto flex w-full flex-col gap-8 border-t border-ddDarkGreen-900/10 lg:mx-0 lg:border-t-0 ">
             {[top2, top3].map((project) => (
               <Card key={project.slug}>
                 <Article project={project} views={views[project.slug] ?? 0} />
@@ -102,7 +100,7 @@ export default async function ProjectsPage() {
             ))}
           </div>
         </div>
-        <div className="bg-ddDarkGreen-800 hidden h-px w-full md:block" />
+        <div className="hidden h-px w-full bg-ddDarkGreen-500 md:block" />
 
         <div className="mx-auto grid grid-cols-1 gap-4 md:grid-cols-3 lg:mx-0">
           <div className="grid grid-cols-1 gap-4">

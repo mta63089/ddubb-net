@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-key */
 'use client';
 
 import { Github, Globe, Linkedin, Mail, Twitter } from 'lucide-react';
@@ -38,31 +39,31 @@ const socials = [
   },
 ];
 
-export default function Example() {
+export default function Contact() {
   return (
-    <div className=" from-ddDarkGreen-900/0 via-ddDarkGreen-900 to-ddDarkGreen-900/0 bg-gradient-to-tl">
+    <div className="bg-black/50">
       <Navigation />
       <div className="container mx-auto flex min-h-screen items-center justify-center px-4">
         <div className="mx-auto mt-32 grid w-full grid-cols-1 gap-8 sm:mt-0 sm:grid-cols-3 lg:gap-16">
           {socials.map((s) => (
-            <Card key={s.handle}>
+            <Card>
               <Link
                 href={s.href}
                 target="_blank"
                 className="group relative flex flex-col items-center gap-4 p-4 duration-700 md:gap-8 md:p-16  md:py-24  lg:pb-48"
               >
                 <span
-                  className="from-ddDarkGreen-500 via-ddDarkGreen-500/50 absolute h-2/3 w-px bg-gradient-to-b to-transparent"
+                  className="absolute h-2/3 w-px bg-gradient-to-b from-ddDarkGreen via-ddDarkGreen/50 to-transparent"
                   aria-hidden="true"
                 />
-                <span className="text-ddLightGreen-200 group-hover:bg-ddDarkGreen-900 border-ddDarkGreen-500 bg-ddDarkGreen-900 group-hover:border-ddDarkGreen-200 drop-shadow-orange relative z-10 flex h-12 w-12 items-center justify-center rounded-full border text-sm duration-1000 group-hover:text-white">
+                <span className="relative z-10 flex h-12 w-12 items-center justify-center rounded-full border border-ddDarkGreen bg-ddDarkGreen text-sm text-ddLightGreen-200 drop-shadow-lg duration-1000 group-hover:border-ddDarkGreen-200 group-hover:bg-ddDarkGreen group-hover:text-white">
                   {s.icon}
                 </span>{' '}
                 <div className="z-10 flex flex-col items-center">
-                  <span className="text-ddLightGreen-200 font-display font-medium duration-150 group-hover:text-white lg:text-xl xl:text-3xl">
+                  <span className="font-medium text-ddLightGreen-200 duration-150 group-hover:text-white lg:text-xl xl:text-3xl">
                     {s.handle}
                   </span>
-                  <span className="text-ddLightGreen-400 group-hover:text-ddLightGreen-200 mt-4 text-center text-sm duration-1000">
+                  <span className="mt-4 text-center text-sm text-ddEggshell duration-1000 group-hover:text-ddEggshell/50">
                     {s.label}
                   </span>
                 </div>
