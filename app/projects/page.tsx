@@ -1,9 +1,9 @@
 import Link from 'next/link';
 import React from 'react';
 import { allProjects } from 'contentlayer/generated';
-import { Navigation } from '../../components/nav';
-import { Card } from '../../components/card';
-import { Article } from './article';
+import { Navigation } from '@/components/nav';
+import { Card } from '@/components/card';
+import { Article } from '@/app/projects/article';
 import { Redis } from '@upstash/redis';
 import { Eye } from 'lucide-react';
 
@@ -23,9 +23,9 @@ export default async function ProjectsPage() {
     {} as Record<string, number>,
   );
 
-  const featured = allProjects.find((project) => project.slug === 'unkey')!;
-  const top2 = allProjects.find((project) => project.slug === 'planetfall')!;
-  const top3 = allProjects.find((project) => project.slug === 'highstorm')!;
+  const featured = allProjects.find((project) => project.slug === 'ddubb.net')!;
+  const top2 = allProjects.find((project) => project.slug === 'ddubb-bot')!;
+  const top3 = allProjects.find((project) => project.slug === 'ddubb.xyz')!;
   const sorted = allProjects
     .filter((p) => p.published)
     .filter(
